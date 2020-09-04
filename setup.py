@@ -1,23 +1,27 @@
 import json
 import os
-import random
 
 
-rnu = random.randrange(1)
+usr = input("Pick a username\n")
 
-usrn = input("Pick a username")
-
-db = {
-  "username":usr,
-  "name":name,
-  "age":age,
-  "address":adr,
-  "byear":by 
-}
-# Hey look guys I'm doing a Nathan!
-if os.path.exists(f"profile_{usrn}.json"):
+if os.path.exists(f"profile_{usr}.json"):
   print("Username already exists! Please pick a different username.")
 else:
-  with open(f"profile_{usrn}.json", "w") as prf:
+  name = input("What's your name?\n")
+
+  age = input("How old are you?\n")
+
+  adr = input("What's your address?\n")
+
+  by = input("What year were you born?\n")
+
+  db = {
+    "username": usr,
+    "name": name,
+    "age": age,
+    "address": adr,
+    "byear": by
+  }
+  # Hey look guys I'm doing a Nathan!
+  with open(f"profile_{usr}.json", "w") as prf:
     json.dump(db, prf)
-    
